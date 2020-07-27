@@ -9,13 +9,15 @@ import { MaterialModule } from './material/material.module';
 import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './navigation/header/header.component';
+import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    SidenavListComponent
   ],
   imports: [
     BrowserModule,

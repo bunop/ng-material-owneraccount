@@ -2,9 +2,14 @@
   <mat-sidenav-container>
     <mat-sidenav #sidenav role="navigation">
       <!--this is a place for us to add side-nav code-->
+      <!-- In this code, we react to the event emitter from the sidenav-list component
+      and close the side-nav by using the #sidenav local reference. -->
+      <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
     </mat-sidenav>
     <mat-sidenav-content>
       <!--in here all the content must reside. We will add a navigation header as well-->
+      <!-- when clicking on menu material icon (hidden in xs and over screen size), 
+      I will get the event emitted and toggle sidenav (which is a local reference to mat-sidenav) -->
       <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
       <main>
         <router-outlet></router-outlet>
