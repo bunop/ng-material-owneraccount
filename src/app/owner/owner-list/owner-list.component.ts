@@ -31,6 +31,10 @@ export class OwnerListComponent implements OnInit, AfterViewInit {
     console.log(event);
   }
 
+  public doFilter = (value: string) => {
+    this.dataSource.filter = value.trim().toLocaleLowerCase();
+  }
+
   public getAllOwners = () => {
     this.repoService.getData('owner')
     .subscribe(res => {
