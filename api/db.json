@@ -1,0 +1,40 @@
+{
+  "owner": [
+    {
+      "id": 1,
+      "name": "Anna Bosh",
+      "dateOfBirth": "Nov 14, 1974",
+      "address": "27 Colored Row"
+    },
+    {
+      "id": 2,
+      "name": "Daniel Batista",
+      "dateOfBirth": "Apr 19, 2000",
+      "address": "Congress Avenue 56"
+    },
+    {
+      "id": 3,
+      "name": "Dave",
+      "dateOfBirth": "Mar 29, 2009",
+      "address": "Dave's street 23"
+    },
+    {
+      "id": 4,
+      "name": "John Keen",
+      "dateOfBirth": "Dec 30, 1980",
+      "address": "61 Wellfield road"
+    },
+    {
+      "id": 5,
+      "name": "Martin Miller",
+      "dateOfBirth": "May 21, 1983",
+      "address": "3 Edgar Buildings"
+    },
+    {
+      "id": 6,
+      "name": "Sam Query",
+      "dateOfBirth": "Apr 22, 1990",
+      "address": "91 Western Roads"
+    }
+  ]
+}
