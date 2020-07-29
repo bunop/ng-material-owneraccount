@@ -1,6 +1,8 @@
 import { RepositoryService } from './../../shared/repository.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatSort } from '@angular/material/sort';
+
 import { Owner } from '../../_interface/owner.model';
 
 @Component({
@@ -8,15 +10,25 @@ import { Owner } from '../../_interface/owner.model';
   templateUrl: './owner-list.component.html',
   styleUrls: ['./owner-list.component.css']
 })
-export class OwnerListComponent implements OnInit {
+export class OwnerListComponent implements OnInit, AfterViewInit {
 
   public displayedColumns = ['name', 'dateOfBirth', 'address', 'details', 'update', 'delete'];
   public dataSource = new MatTableDataSource<Owner>();
+
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private repoService: RepositoryService) { }
 
   ngOnInit() {
     this.getAllOwners();
+  }
+
+  ngAfterViewInit(): void {
+    this.dataSource.sort = this.sort;
+  }
+
+  public customSort = (event) => {
+    console.log(event);
   }
 
   public getAllOwners = () => {

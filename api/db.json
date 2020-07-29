@@ -3,37 +3,37 @@
     {
       "id": 1,
       "name": "Anna Bosh",
-      "dateOfBirth": "Nov 14, 1974",
+      "dateOfBirth": "1974-11-14",
       "address": "27 Colored Row"
     },
     {
       "id": 2,
       "name": "Daniel Batista",
-      "dateOfBirth": "Apr 19, 2000",
+      "dateOfBirth": "2000-04-19",
       "address": "Congress Avenue 56"
     },
     {
       "id": 3,
       "name": "Dave",
-      "dateOfBirth": "Mar 29, 2009",
+      "dateOfBirth": "2009-03-29",
       "address": "Dave's street 23"
     },
     {
       "id": 4,
       "name": "John Keen",
-      "dateOfBirth": "Dec 30, 1980",
+      "dateOfBirth": "1980-12-30",
       "address": "61 Wellfield road"
     },
     {
       "id": 5,
       "name": "Martin Miller",
-      "dateOfBirth": "May 21, 1983",
+      "dateOfBirth": "1983-05-21",
       "address": "3 Edgar Buildings"
     },
     {
       "id": 6,
       "name": "Sam Query",
-      "dateOfBirth": "Apr 22, 1990",
+      "dateOfBirth": "1990-04-22",
       "address": "91 Western Roads"
     }
   ]
