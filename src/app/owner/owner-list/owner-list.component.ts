@@ -2,6 +2,7 @@ import { RepositoryService } from './../../shared/repository.service';
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
 
 import { Owner } from '../../_interface/owner.model';
 
@@ -16,6 +17,7 @@ export class OwnerListComponent implements OnInit, AfterViewInit {
   public dataSource = new MatTableDataSource<Owner>();
 
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private repoService: RepositoryService) { }
 
@@ -25,9 +27,14 @@ export class OwnerListComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 
   public customSort = (event) => {
+    console.log(event);
+  }
+
+  public pageChanged = (event) => {
     console.log(event);
   }
 
