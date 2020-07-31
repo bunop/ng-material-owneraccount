@@ -1,5 +1,5 @@
 {
-  "owner": [
+  "owners": [
     {
       "id": 1,
       "name": "Anna Bosh",
@@ -35,6 +35,32 @@
       "name": "Sam Query",
       "dateOfBirth": "1990-04-22",
       "address": "91 Western Roads"
+    }
+  ],
+  "accounts": [
+    {
+      "id": 1,
+      "dateCreated": "2000-04-19",
+      "accountType": "Beginner user",
+      "ownerId": 1
+    },
+    {
+      "id": 2,
+      "dateCreated": "2010-06-30",
+      "accountType": "Advanced user",
+      "ownerId": 2
+    },
+    {
+      "dateCreated": "2020-01-13",
+      "accountType": "Advanced user",
+      "ownerId": 1,
+      "id": 3
+    },
+    {
+      "dateCreated": "2020-07-31",
+      "accountType": "Advanced user",
+      "ownerId": 1,
+      "id": 4
     }
   ]
 }
