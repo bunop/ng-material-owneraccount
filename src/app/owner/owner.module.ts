@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { MaterialModule } from './../material/material.module';
 import { OwnerListComponent } from './owner-list/owner-list.component';
@@ -17,7 +18,8 @@ import { OwnerCreateComponent } from './owner-create/owner-create.component';
     CommonModule,
     OwnerRoutingModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ReactiveFormsModule
   ]
 })
 export class OwnerModule { }
