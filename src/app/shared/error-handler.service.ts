@@ -3,13 +3,17 @@ import { Injectable } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 
+import { ErrorDialogComponent } from './dialogs/error-dialog/error-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+
 @Injectable({
   providedIn: 'root'
 })
 export class ErrorHandlerService {
   public errorMessage: string = '';
+  public dialogConfig;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private dialog: MatDialog) { }
 
   public handleError = (error: HttpErrorResponse) => {
     if(error.status === 500){
@@ -33,12 +37,14 @@ export class ErrorHandlerService {
     this.router.navigate(['/404']);
   }
 
-  private handleOtherError = (error: HttpErrorResponse) => {
+  private handleOtherError(error: HttpErrorResponse){
     this.createErrorMessage(error);
-    //TODO: this will be fixed later;
+    this.dialogConfig.data = { 'errorMessage': this.errorMessage };
+    this.dialog.open(ErrorDialogComponent, this.dialogConfig);
   }
 
   private createErrorMessage(error: HttpErrorResponse){
     this.errorMessage = error.error ? error.error : error.statusText;
   }
+
 }

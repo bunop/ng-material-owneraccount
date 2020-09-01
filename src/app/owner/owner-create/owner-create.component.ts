@@ -7,6 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { OwnerForCreation } from '../../_interface/ownerForCreation.model';
 import { SuccessDialogComponent } from 'src/app/shared/dialogs/success-dialog/success-dialog.component';
+import { ErrorHandlerService } from '../../shared/error-handler.service';
 
 @Component({
   selector: 'app-owner-create',
@@ -17,7 +18,7 @@ export class OwnerCreateComponent implements OnInit {
   public ownerForm: FormGroup;
   private dialogConfig;
 
-  constructor(private location: Location, private repository: RepositoryService, private dialog: MatDialog) { }
+  constructor(private location: Location, private repository: RepositoryService, private dialog: MatDialog, private errorService: ErrorHandlerService) { }
 
   ngOnInit() {
     this.ownerForm = new FormGroup({
@@ -61,6 +62,7 @@ export class OwnerCreateComponent implements OnInit {
     this.repository.create(apiUrl, owner)
       .subscribe(res => {
         let dialogRef = this.dialog.open(SuccessDialogComponent, this.dialogConfig);
+
         //we are subscribing on the [mat-dialog-close] attribute as soon as we click on the dialog button
         dialogRef.afterClosed()
           .subscribe(result => {
@@ -68,8 +70,8 @@ export class OwnerCreateComponent implements OnInit {
           });
       },
       (error => {
-        //temporary as well
-        this.location.back();
+        this.errorService.dialogConfig = { ...this.dialogConfig };
+        this.errorService.handleError(error);
       })
     )
   }
